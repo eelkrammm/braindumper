@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "buildCommand": "cd frontend_thinkboard && npm install && npm run build",
+  "outputDirectory": "frontend_thinkboard/dist",
+  "builds": [
+    {
+      "src": "backend/src/server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "backend/src/server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "frontend_thinkboard/dist/$1"
+    }
+  ]
+}

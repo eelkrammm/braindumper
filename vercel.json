@@ -20,11 +20,8 @@
       "dest": "backend/src/server.js"
     },
     {
-      "handle": "filesystem"
-    },
-    {
       "src": "/(.*)",
-      "dest": "/index.html"
+      "dest": "/frontend_thinkboard/$1"
     }
   ]
 }

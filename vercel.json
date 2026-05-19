@@ -1,13 +1,8 @@
 {
   "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": "frontend_thinkboard/dist",
   "builds": [
-    {
-      "src": "frontend_thinkboard/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
-    },
     {
       "src": "backend/src/server.js",
       "use": "@vercel/node"

@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "buildCommand": "cd frontend_thinkboard && npm install && npm run build",
-  "outputDirectory": "frontend_thinkboard/dist",
   "builds": [
+    {
+      "src": "frontend_thinkboard/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    },
     {
       "src": "backend/src/server.js",
       "use": "@vercel/node"
@@ -14,8 +19,11 @@
       "dest": "backend/src/server.js"
     },
     {
+      "handle": "filesystem"
+    },
+    {
       "src": "/(.*)",
-      "dest": "frontend_thinkboard/dist/$1"
+      "dest": "/index.html"
     }
   ]
 }

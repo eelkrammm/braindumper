@@ -20,7 +20,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "frontend_thinkboard/$1"
+      "dest": "frontend_thinkboard/dist/$1"
     }
   ]
 }
